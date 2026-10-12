@@ -1,1 +1,9 @@
 # Proyecto-Final-Estructura-de-Datos---Grupo-2
+
+
+
+Integrantes del Grupo:
+KEVIN JOSUE QUIROS CHAVARRIA
+GUSTAVO CHAVES
+EMMANUEL FRANCISCO MENA CESPEDES 
+EMMANUEL RIOS CASTRO
