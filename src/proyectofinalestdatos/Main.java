@@ -5,6 +5,9 @@
 package proyectofinalestdatos;
 
 import javax.swing.JOptionPane;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 /**
  *
@@ -16,36 +19,42 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        //Cola c=new Cola();
-        String res;
+
+        Configuracion config = new Configuracion();
         
-        do{
-            res=JOptionPane.showInputDialog(" ******* MENU PRINCIPAL *******\n"
+        MenuPrincipal();
+
+    private static void MenuPrincipal() {
+
+        String res;
+
+        do {
+            res = JOptionPane.showInputDialog(" ******* MENU PRINCIPAL *******\n"
                     + "1) Opcion 1\n2) Opcion 2\n3) Opcion 3\n0) SALIR\n\n"
                     + "Ingrese una opcion (0-3)");
-            switch(res){
+            switch (res) {
                 case "1":
-                    JOptionPane.showMessageDialog(null, 
+                    JOptionPane.showMessageDialog(null,
                             "En desarollo");
                     break;
                 case "2":
-                    JOptionPane.showMessageDialog(null, 
+                    JOptionPane.showMessageDialog(null,
                             "En desarollo");
                     break;
                 case "3":
-                    JOptionPane.showMessageDialog(null, 
+                    JOptionPane.showMessageDialog(null,
                             "En desarollo");
                     break;
                 case "0":
-                    JOptionPane.showMessageDialog(null, 
+                    JOptionPane.showMessageDialog(null,
                             "Cerrando el programa");
                     break;
                 default:
-                    JOptionPane.showMessageDialog(null, 
+                    JOptionPane.showMessageDialog(null,
                             "Error opcion no valida");
             }
-        }while(!res.equals("0"));
+        } while (!res.equals("0"));
+
     }
-    
+
 }
