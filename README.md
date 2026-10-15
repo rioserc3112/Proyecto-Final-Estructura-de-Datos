@@ -6,7 +6,6 @@ Sistema de gestión de cajas de un banco, desarrollado en Java con NetBeans. La 
 
 ## Integrantes del grupo
 
-- KEVIN JOSUE QUIROS CHAVARRIA
 - GUSTAVO CHAVES
 - EMMANUEL FRANCISCO MENA CESPEDES
 - EMMANUEL RIOS CASTRO
