@@ -9,6 +9,32 @@ public class Configuracion {
 
     private int cantCajas;
     private String nomBanco;
+    
+    
+    
+    //Esta funcion debe ser reemplazada cuando la logica de leer prod.txt funcione
+    //Estos datos son aleatorios nada mas para que el resto del programa no se rompa
+    
+    public Configuracion() {
+        this.cantCajas = 5;
+        this.nomBanco = "Banco La Paz";
+
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /*NOTA: Aqui se hizo un intento de iniciar configuracion sin embargo eso le corresponde a la persona 2
+    *EMMANUEL FRANCISCO MENA CESPEDES
+    Por favor revisar si el siguiente codigo es funcional y si no eliminarlo y hacer logica nueva
+    
+     
+    
 
     public Configuracion() {
         iniciarConfig();
@@ -59,6 +85,21 @@ public class Configuracion {
         }while(cantidad >= 3);
     }
 
-    public int getCantCajas() { return cantCajas; }
+   
+    
+    public int getCantCajas() { return cantCaMas; }
     public String getNomBanco() { return nomBanco; }
+   */ 
+    
+    
+    //Getters 
+
+    public int getCantCajas() {
+        return cantCajas;
+    }
+
+    public String getNomBanco() {
+        return nomBanco;
+    }
+    
 }

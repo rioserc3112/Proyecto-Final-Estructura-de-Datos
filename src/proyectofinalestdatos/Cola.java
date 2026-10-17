@@ -97,40 +97,6 @@ public class Cola {
         return false;
     }
     
-    
-    //contarNombre
-    public void contarNom(String nom) {
-        int cont = 0;
-        if (!esVacia()) {
-            Nodo aux = prim;
-            while (aux != null) {
-                if (aux.getDato().getNombre().equals(nom)) {
-                    cont++;
-                }
-                aux = aux.getSig();
-            }
-        }
-        JOptionPane.showMessageDialog(null, "Existen " + cont
-                + " de personas que se llaman " + nom);
-    }
-    
-    
-    public Ticket getMayor(){
-        //Recorren buscan el id mayor y lo devuelven 
-        
-        return null;
-    }
-    
-    public void ordenarMayores(){
-        Cola aux=new Cola();
-        
-        while(!esVacia()){
-            aux.agregar(getMayor());
-            eliminar(getMayor().getId());
-        }
-        
-        prim=aux.prim;
-        ult=aux.ult;
-    }
+  
 }
 
