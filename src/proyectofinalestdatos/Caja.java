@@ -14,23 +14,44 @@ public class Caja {
 
     private int numeroCaja;
     private Cola cola = new Cola();
-    private Ticket.TipoTiquete tipo;
+    private Ticket.TipoTicket tipo;
     private Ticket enAtencion;
+    private int cantTickets;
+
+    public Caja(int numeroCaja, Ticket.TipoTicket tipo) {
+        this.numeroCaja = numeroCaja;
+        this.tipo = tipo;
+        this.enAtencion = null;
+        this.cantTickets = 0;
+    }
+
+    public int getCantTickets() {
+        return cantTickets;
+    }
+
+    public void setCantTickets(int cantTickets) {
+        this.cantTickets = cantTickets;
+    }
+    
+    public void agregar(Ticket t){
+        cola.agregar(t);
+    }
+    
 
     private void atender(Ticket t) {
         t.setHora_atencion(LocalDateTime.now());
         enAtencion = t;
     }
 
-    public Caja(Ticket.TipoTiquete tipo) {
+    public Caja(Ticket.TipoTicket tipo) {
         this.tipo = tipo;
     }
 
-    public Ticket.TipoTiquete getTipo() {
+    public Ticket.TipoTicket getTipo() {
         return tipo;
     }
 
-    public void setTipo(Ticket.TipoTiquete tipo) {
+    public void setTipo(Ticket.TipoTicket tipo) {
         this.tipo = tipo;
 
     }

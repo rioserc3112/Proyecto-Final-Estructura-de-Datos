@@ -9,6 +9,13 @@ public class Configuracion {
 
     private int cantCajas;
     private String nomBanco;
+    private int min_edad;
+    private int max_edad;
+    private int ultTicket;
+    private int indexCajaPreferencial;
+    private int indexCajaRapida;
+    
+    //Anadir validacion de que cantidad de cajas nunca sea mejor que 3 
     
     
     
@@ -18,8 +25,59 @@ public class Configuracion {
     public Configuracion() {
         this.cantCajas = 5;
         this.nomBanco = "Banco La Paz";
+        this.min_edad = 10;
+        this.max_edad = 120;
+        this.ultTicket = 0;
+        this.indexCajaPreferencial = cantCajas-1; // Esto nunca va a cambiar, no se debe agregar a prod.txt
+        this.indexCajaRapida = cantCajas - 2; // Esto nunca va a cambiar, no se debe agregar a prod.txt
+        
+        
+        //iniciarConfig(); Esta logica debe ser programada
+        
 
     }
+
+    public int getIndexCajaPreferencial() {
+        return indexCajaPreferencial;
+    }
+
+    public void setIndexCajaPreferencial(int indexCajaPreferencial) {
+        this.indexCajaPreferencial = indexCajaPreferencial;
+    }
+
+    public int getIndexCajaRapida() {
+        return indexCajaRapida;
+    }
+
+    public void setIndexCajaRapida(int indexCajaRapida) {
+        this.indexCajaRapida = indexCajaRapida;
+    }
+    
+    
+
+    public int actualizarContTiquet() {
+        this.ultTicket ++;        
+        return ultTicket;
+    }
+    
+    
+
+    public int getMin_edad() {
+        return min_edad;
+    }
+
+    public void setMin_edad(int min_edad) {
+        this.min_edad = min_edad;
+    }
+
+    public int getMax_edad() {
+        return max_edad;
+    }
+
+    public void setMax_edad(int max_edad) {
+        this.max_edad = max_edad;
+    }
+    
     
     
     

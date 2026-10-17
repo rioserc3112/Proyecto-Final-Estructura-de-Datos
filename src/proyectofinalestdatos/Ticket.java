@@ -5,6 +5,7 @@
 package proyectofinalestdatos;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,30 +17,49 @@ public class Ticket {
     private int edad;
     private LocalDateTime hora_creacion;
     private LocalDateTime hora_atencion;
-    private Tramite tramite;
-    private TipoTiquete tipo;
+    ArrayList<Tramite> tramites = new ArrayList<>();
+    private TipoTicket tipo;
+    private boolean atendido;
     
     public enum Tramite {
-    DEPOSITOS,
-    RETIROS,
-    CAMBIO_DIVISAS
+        DEPOSITOS,
+        RETIROS,
+        CAMBIO_DIVISAS,
+        PAGO_SERVICIOS,
+        PAGO_TARJETA,
+        PAGO_PRESTAMO,
+        TRANSFERENCIAS,
+        APERTURA_CUENTA,
+        CONSULTA_ESTADO_CUENTA,
+        OTROS
     }
 
-    public enum TipoTiquete {
+    public enum TipoTicket {
         P,  // preferencial
         A,  // un solo trámite
         B   // dos o más trámites
     }
 
-    public Ticket(int id, String nombre, int edad, Tramite tramite, TipoTiquete tipo) {
+    public Ticket(int id, String nombre, int edad, ArrayList<Tramite> tramites, TipoTicket tipo) {
         this.id = id;
         this.nombre = nombre;
         this.edad = edad;
         this.hora_creacion = LocalDateTime.now();
         this.hora_atencion = null;
-        this.tramite = tramite;
+        this.tramites.addAll(tramites);
         this.tipo = tipo;
+        this.atendido = false;
     }
+
+    public boolean isAtendido() {
+        return atendido;
+    }
+
+    public void setAtendido(boolean atendido) {
+        this.atendido = atendido;
+    }
+    
+    
 
     public int getId() {
         return id;
@@ -81,19 +101,16 @@ public class Ticket {
         this.hora_atencion = hora_atencion;
     }
 
-    public Tramite getTramite() {
-        return tramite;
+    public ArrayList<Tramite> getTramite() {
+        return tramites;
     }
 
-    public void setTramite(Tramite tramite) {
-        this.tramite = tramite;
-    }
 
-    public TipoTiquete getTipo() {
+    public TipoTicket getTipo() {
         return tipo;
     }
 
-    public void setTipo(TipoTiquete tipo) {
+    public void setTipo(TipoTicket tipo) {
         this.tipo = tipo;
     }
     

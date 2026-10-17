@@ -4,6 +4,7 @@
  */
 package proyectofinalestdatos;
 
+import java.time.LocalDateTime;
 import javax.swing.JOptionPane;
 
 /**
@@ -30,11 +31,12 @@ public class Cola {
     }
     
     //desencolar
-    public void desencolar(){
+    public void atendido(){            
         if(!esVacia()){
-            prim=prim.getSig();
-            if(prim==null){
-                ult=null;
+            prim.getDato().setHora_atencion(LocalDateTime.now());
+            prim = prim.getSig();
+            if(prim == null){
+                ult = null;
             }
         }else{
             JOptionPane.showMessageDialog(null, "Cola vacia");
@@ -53,29 +55,6 @@ public class Cola {
         return r;
     }
     
-    
-    //Eliminar
-    public void eliminar(int id) {//INICIAMOS AQUI LA PROX
-        if (!esVacia()) {
-            if (prim.getDato().getId() == id) {
-                this.desencolar();
-            }else{
-                Nodo aux = prim;
-                while (aux.getSig() != ult) {
-                    if (aux.getSig().getDato().getId() == id) {
-                        //Brincarse al siguiente
-                        aux.setSig(aux.getSig().getSig());
-                        break;
-                    }
-                    aux = aux.getSig();
-                }
-                if(aux.getSig()==ult){
-                    aux.setSig(null);
-                    ult=aux;
-                }
-            }
-        }
-    }
    
     
     //Existe
