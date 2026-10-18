@@ -29,8 +29,6 @@ public class Ticket {
         PAGO_TARJETA,
         PAGO_PRESTAMO,
         TRANSFERENCIAS,
-        APERTURA_CUENTA,
-        CONSULTA_ESTADO_CUENTA,
         OTROS
     }
 

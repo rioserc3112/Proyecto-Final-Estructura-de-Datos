@@ -19,7 +19,7 @@ public class Cola {
     }
     
     //encolar
-    public void agregar(Ticket t){
+    public Nodo agregar(Ticket t){
         Nodo nuevo = new Nodo(t);
         
         if(esVacia()){
@@ -28,6 +28,7 @@ public class Cola {
             ult.setSig(nuevo);
             ult=nuevo;
         }
+        return nuevo;
     }
     
     //desencolar
@@ -46,10 +47,18 @@ public class Cola {
     //toString
     @Override
     public String toString() {
-        String r = "Cola:\n";
+        
+        if(prim==null){
+            return "No hay clientes en cola";
+        }
+        
+        String r = "";
+        
         Nodo aux = prim;
         while (aux != null) {
-            r += aux + "\n";
+            if(!aux.getDato().isAtendido()){
+                r += aux.getDato().getNombre() + "\n";
+            }
             aux = aux.getSig();
         }
         return r;

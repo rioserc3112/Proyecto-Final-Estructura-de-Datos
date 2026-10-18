@@ -28,8 +28,8 @@ public class Configuracion {
         this.min_edad = 10;
         this.max_edad = 120;
         this.ultTicket = 0;
-        this.indexCajaPreferencial = cantCajas-1; // Esto nunca va a cambiar, no se debe agregar a prod.txt
-        this.indexCajaRapida = cantCajas - 2; // Esto nunca va a cambiar, no se debe agregar a prod.txt
+        this.indexCajaPreferencial = 0; // Esto nunca va a cambiar, no se debe agregar a prod.txt
+        this.indexCajaRapida = 1; // Esto nunca va a cambiar, no se debe agregar a prod.txt
         
         
         //iniciarConfig(); Esta logica debe ser programada
