@@ -170,11 +170,13 @@ public class Main {
         } //De ser varios tramites se envia a Caja con menor cantidad de tickets
         else {
 
-            Caja cajaMasVacia = cajas.get(0);
+            Caja cajaMasVacia = cajas.get(3); //Inicia en 3 porque 1 y 2 son tipo P y A
 
             for (Caja c : cajas) {
-                if (c.getCantTickets() < cajaMasVacia.getCantTickets()) {
-                    cajaMasVacia = c;
+                if (c.getTipo() == Ticket.TipoTicket.B){
+                    if (c.getCantTickets() < cajaMasVacia.getCantTickets()) {
+                        cajaMasVacia = c;
+                    }                    
                 }
             }
 
