@@ -20,27 +20,36 @@ public class Main {
      */
     public static void main(String[] args) {
 
+        //Sin login valido no se puede acceder 
+        
+        Login login = new Login();
+        if(!login.autenticar()){
+            JOptionPane.showMessageDialog(null, "Acceso denegado. Cerrando el programa");
+            return;
+        }
+            
+        
         Configuracion config = new Configuracion();
         
-        MenuPrincipal();
-
-    private static void MenuPrincipal() {
+        MenuPrincipal(config,login);
+    }
+    
+    private static void MenuPrincipal(Configuracion config, Login login) {
 
         String res;
 
         do {
             res = JOptionPane.showInputDialog(" ******* MENU PRINCIPAL *******\n"
-                    + "1) Opcion 1\n2) Opcion 2\n3) Opcion 3\n0) SALIR\n\n"
+                    + "Usuario:" +login.getUsuarioActual() + " (" + login.getRolActual() + ")\n\n"
+                    + "1) Creacion de tiquetes\n2) Atencion de tiquetes\n3) Reportes\n0) SALIR\n\n"
                     + "Ingrese una opcion (0-3)");
+            if (res == null){ //Elusuraio salio o cancelo 
+                res = "0";
+            }
+            
             switch (res) {
                 case "1":
-                    JOptionPane.showMessageDialog(null,
-                            "En desarollo");
-                    break;
                 case "2":
-                    JOptionPane.showMessageDialog(null,
-                            "En desarollo");
-                    break;
                 case "3":
                     JOptionPane.showMessageDialog(null,
                             "En desarollo");

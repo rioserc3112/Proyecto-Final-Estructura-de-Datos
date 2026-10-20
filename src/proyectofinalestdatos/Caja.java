@@ -22,15 +22,15 @@ public class Caja {
         enAtencion = t;
     }
     
-    public Caja(tipoCaja tipo) {
+    public Caja(Ticket.TipoTiquete tipo) {
         this.tipo = tipo;
     }
 
-    public tipoCaja getTipo() {
+    public Ticket.TipoTiquete getTipo() {
         return tipo;
     }
 
-    public void setTipo(tipoCaja tipo) {
+    public void setTipo(Ticket.TipoTiquete tipo) {
         this.tipo = tipo;
         
     }

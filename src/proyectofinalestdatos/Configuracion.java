@@ -3,15 +3,28 @@ package proyectofinalestdatos;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 public class Configuracion {
+    public static final String ARCHIVO = "prod.txt";
+    public static final int MIN_CAJAS = 3;
 
     private int cantCajas;
     private String nomBanco;
+    private Ticket.TipoTiquete[] tiposCajas; // posicion 0 = caja 1
 
     public Configuracion() {
-        iniciarConfig();
+        if (!cargar()) {
+            pedirDatos();
+            asignarTipos();
+            guardar();
+        }
     }
 
     private void iniciarConfig() {
