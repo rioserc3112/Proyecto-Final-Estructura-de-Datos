@@ -54,7 +54,9 @@ public class Login {
     }
  
     /**
-     * Pide usuario y contraseña (máximo 3 intentos).
+     * Pide usuario y contraseña (máximo 3 intentos). 
+     * // Usuario: admin Passw:admin123 Rol admin 
+     * // Usuraio: cajero Passw:cajero123 Rol cajero  
      * @return true si el acceso fue concedido, false si canceló o agotó los intentos.
      */
     public boolean autenticar() {
