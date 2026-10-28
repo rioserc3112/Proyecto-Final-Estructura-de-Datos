@@ -1,0 +1,28 @@
+RESOLUCION DE CONFLICTOS: MENA -> MAIN
+
+Este paquete contiene los archivos resueltos para combinar MENA con MAIN manteniendo la funcionalidad principal de MAIN.
+
+Archivos incluidos:
+- Main.java: mantiene el flujo principal de MAIN e incorpora el login antes de abrir el menu.
+- Configuracion.java: incorpora lectura/guardado de prod.txt y conserva los metodos que usa MAIN.
+- Caja.java: conserva la implementacion de MAIN porque la de MENA elimina metodos que necesita el menu de MAIN.
+- Cola.java: conserva las operaciones requeridas por MAIN y agrega utilidades de MENA.
+- AlmacenTickets.java: adaptado al modelo de MAIN, que permite varios tramites por tiquete.
+- Login.java, prod.txt y usuarios.txt: archivos de MENA.
+
+Verificacion: compilacion Java exitosa con javac y con Ant usando -Djavac.source=21 -Djavac.target=21.
+Nota: AlmacenTickets se conserva como modulo, pero su persistencia aun no esta conectada al flujo de creacion/atencion del menu.
+
+PASOS DE APLICACION:
+1. Extraer estos archivos sobre la carpeta del proyecto ProyectoFinal, reemplazando los archivos con el mismo nombre.
+2. En la carpeta del proyecto, ejecutar:
+   git rm -f nbproject/private/private.properties nbproject/private/private.xml
+   git add -A
+   git status
+3. Confirmar que git status ya no muestre archivos UU, AA, DU ni conflictos sin resolver.
+4. Compilar con:
+   ant -Djavac.source=21 -Djavac.target=21 clean compile
+5. Solo si compila, confirmar el merge con:
+   git commit -m "Merge MENA into MAIN and resolve conflicts"
+
+No se incluye ni se modifica la carpeta .git.

@@ -1,0 +1,6 @@
+nom_banco:BAC
+cant_cajas:4
+caja_1:P
+caja_2:A
+caja_3:B
+caja_4:B
